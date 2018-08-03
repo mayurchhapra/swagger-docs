@@ -1,0 +1,71 @@
+{
+  "swagger": "2.0",
+  "info": {
+
+  },
+  "host": "",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "User",
+      "description": "APIs for Users"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/auth/signup": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Signup API",
+        "produces": [
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "Email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "Password",
+            "type": "string"
+          },
+        ]
+      }
+    },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "authorization",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "username": {
+          "type": "string"
+        },
+        "firstName": {
+          "type": "string"
+        },
+      },
+      "xml": {
+        "name": "User"
+      }
+    }
+  }
+}
